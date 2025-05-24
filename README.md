@@ -1,5 +1,5 @@
-# dsa-hw01-sparse-matrix
-**DSA Homework 01 - Sparse Matrix** Python project, reflecting my folder structure, usage steps, and operations:
+**DSA Homework 01 - Sparse Matrix**
+Python project, reflecting my folder structure, usage steps, and operations:
 
 # Sparse Matrix Operations – DSA Homework 01
 
@@ -31,7 +31,7 @@ dsa/
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repo-url>
+git clone the repo
 cd sparse-matrix-dsa-assignment
 ```
 
