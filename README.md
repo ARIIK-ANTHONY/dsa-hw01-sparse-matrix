@@ -1,8 +1,5 @@
-**DSA Homework 01 - Sparse Matrix**
-Python project, reflecting my folder structure, usage steps, and operations:
-
 # Sparse Matrix Operations – DSA Homework 01
-
+Python project, reflecting my folder structure, usage steps, and operations:
 This project implements a custom sparse matrix data structure and performs key matrix operations—**Addition**, **Subtraction**, and **Multiplication**—on sparse matrices efficiently. Designed as part of **DSA Homework 01**, it demonstrates how to represent and manipulate large matrices with minimal memory overhead using a dictionary-based sparse representation.
 
 ---
