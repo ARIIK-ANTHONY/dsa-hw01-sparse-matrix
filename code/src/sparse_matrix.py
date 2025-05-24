@@ -176,14 +176,35 @@ def main():
         m2 = SparseMatrix(matrixFilePath=file2)
 
         if op == '3':
-            choice = input("Multiply by transpose of second matrix? (y/n): ").strip().lower()
-            if choice == 'y':
-                m2_t = m2.transpose()
-                result = m1.multiply(m2_t)
-                op_name = 'multiplication_with_transpose'
-            else:
+            can_multiply = m1.numCols == m2.numRows
+            can_multiply_transpose = m1.numCols == m2.numCols
+
+            if can_multiply and can_multiply_transpose:
+                print("Choose multiplication option:")
+                print("1. Multiply with second matrix")
+                print("2. Multiply with transpose of second matrix")
+                choice = input("Enter choice (1/2): ").strip()
+                if choice == '2':
+                    m2 = m2.transpose()
+                    op_name = 'multiplication_with_transpose'
+                else:
+                    op_name = 'multiplication'
+                result = m1.multiply(m2)
+
+            elif can_multiply:
+                print("Multiplying with second matrix (transpose not possible due to incompatible dimensions).")
                 result = m1.multiply(m2)
                 op_name = 'multiplication'
+
+            elif can_multiply_transpose:
+                print("Multiplying with transpose of second matrix (original matrix dimensions incompatible).")
+                m2 = m2.transpose()
+                result = m1.multiply(m2)
+                op_name = 'multiplication_with_transpose'
+
+            else:
+                raise ValueError("Cannot perform multiplication. Dimensions do not align with second matrix or its transpose.")
+
         elif op == '1':
             result = m1.add(m2)
             op_name = 'addition'
