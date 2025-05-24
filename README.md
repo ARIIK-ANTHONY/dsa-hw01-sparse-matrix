@@ -77,13 +77,13 @@ Enter path to the result output file: ../../sample_inputs/multiply_result.txt
 
 Each input matrix file should be in the following format:
 
-rows=5
-cols=5
-0 0 1
-0 2 3
-1 1 5
-2 3 7
-4 4 9
+  rows=5
+  cols=5
+  0 0 1
+  0 2 3
+  1 1 5
+  2 3 7
+  4 4 9
 
 Each line represents a non-zero entry in the sparse matrix.
 
