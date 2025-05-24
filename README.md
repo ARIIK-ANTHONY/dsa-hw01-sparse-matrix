@@ -1,95 +1,133 @@
-# Sparse Matrix Operations – DSA Homework 01
-Python project, reflecting my folder structure, usage steps, and operations:
-This project implements a custom sparse matrix data structure and performs key matrix operations—**Addition**, **Subtraction**, and **Multiplication**—on sparse matrices efficiently. Designed as part of **DSA Homework 01**, it demonstrates how to represent and manipulate large matrices with minimal memory overhead using a dictionary-based sparse representation.
+# 🧮 Sparse Matrix Operations – DSA Homework 01
+
+This project is part of my coursework for **Data Structures and Algorithms (DSA) Homework 01**. It focuses on implementing a custom **sparse matrix** data structure in Python and performing the following operations:
+
+- ✅ Matrix Addition  
+- ✅ Matrix Subtraction  
+- ✅ Matrix Multiplication  
+
+Sparse matrices are efficient for storing large matrices that contain mostly zeroes. By storing only non-zero elements, we reduce memory usage and improve performance—especially with large datasets.
 
 ---
 
 ## 📁 Project Structure
 
+The project is organized as follows:
+
 ```
-dsa/
-└── sparse_matrix/
-    └── code/
-        └── src/
-            ├── main.py
-            ├── matrix.py
-            ├── utils.py
-            └── ... (other supporting files)
-    └── sample_inputs/
-        ├── small_matrix_1.txt
-        ├── small_matrix_2.txt
-        └── multiply_result.txt
-```
+
+dsa-hw01-sparse-matrix/
+├── README.md                    # Project documentation
+├── code/
+│   └── src/
+│       └── sparse\_matrix.py     # Main program with all logic
+├── output/                      # Result files generated after operations
+│   ├── add\_result.txt
+│   ├── multiply\_result.txt
+│   ├── result\_addition.txt
+│   └── result\_subtraction.txt
+└── sample\_inputs/               # Sample input matrix file
+├── matrix1.txt
+└── matrix2.txt
+
+````
 
 ---
 
-## 🚀 How to Run
+## 🚀 How to Run the Program
+
+Follow these steps to run the program on your local machine:
 
 ### 1. Clone the Repository
 
 ```bash
-git clone the repo
-cd sparse-matrix-dsa-assignment
-```
+git clone https://github.com/ARIIK-ANTHONY/dsa-hw01-sparse-matrix.git
+cd dsa-hw01-sparse-matrix
+````
 
-### 2. Navigate to the Source Directory
+### 2. Navigate to the Source Code
 
 ```bash
-cd dsa/sparse_matrix/code/src/
+cd code/src/
 ```
 
-### 3. Run the Program
+### 3. Run the Python Script
 
-Execute the program using Python:
+Make sure you have Python installed, then run:
 
+```bash
+python3 sparse_matrix.py
+```
 
-### 4. Provide Input and Select Operation
+### 4. Follow the Prompts
 
-When prompted, select the matrix operation you'd like to perform:
+You’ll be asked to choose the operation and provide paths to the input files:
 
 ```
-Select operation:
+Sparse Matrix Operations
 1. Addition
 2. Subtraction
 3. Multiplication
-Enter your choice (1/2/3): 3
+Select operation (1/2/3): 1
+
+Enter path to the first matrix file: ../../sample_inputs/matrix1.txt
+Enter path to the second matrix file: ../../sample_inputs/matrix2.txt
 ```
 
-Then provide paths to your input matrix files (use relative paths as shown below):
+After the operation is completed, the result will be saved in the `output/` folder.
+
+---
+
+## 📥 Input File Format
+
+Each input matrix must follow this format:
 
 ```
-Enter path to the first input file: ../../sample_inputs/small_matrix_1.txt
-Enter path to the second input file: ../../sample_inputs/small_matrix_2.txt
-Enter path to the result output file: ../../sample_inputs/multiply_result.txt
+rows=3
+cols=3
+0 0 5
+0 2 8
+1 1 4
+```
+
+* The first two lines specify the dimensions of the matrix.
+* Each subsequent line represents a non-zero element in the form:
+  `row_index column_index value`
+
+This format ensures efficient storage of sparse matrices.
+
+---
+
+## 📤 Output
+
+The output is saved to a `.txt` file in the `output/` directory. It follows the **same format** as the input file, so it can be reused for additional operations or verification.
+
+Example:
+
+```
+rows=3
+cols=3
+0 0 10
+1 1 5
 ```
 
 ---
 
-## 📌 Features
+## 🎯 Features
 
-* Sparse matrix representation using dictionaries for memory efficiency.
-* Clean command-line interaction and input validation.
-* Modular code structure for readability and future extension.
+* Sparse matrix representation using Python dictionaries
+* Clean command-line interface with input prompts
+* Simple and modular Python code
+* Custom input/output file support
+* Efficient computation for sparse data
 
----
 
-## 📚 Sample Input Format
+## ✅ Sample Run (Addition)
 
-Each input matrix file should be in the following format:
+```
+Select operation (1/2/3): 1
+Enter path to the first matrix file: ../../sample_inputs/matrix1.txt
+Enter path to the second matrix file: ../../sample_inputs/matrix2.txt
+```
 
-  rows=5
-  cols=5
-  0 0 1
-  0 2 3
-  1 1 5
-  2 3 7
-  4 4 9
-
-Each line represents a non-zero entry in the sparse matrix.
-
----
-
-## 🧑‍💻 Author
-
-**Anthony Ariik Mathiang Ariik**
-DSA Homework 01 – Sparse Matrix Operations
+📂 Output saved at: `output/result_addition.txt`
